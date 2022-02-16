@@ -1,15 +1,16 @@
-//Funciones flecha
-//Funciones en ES5
+//Funciones CallBack
 
-const years = [2000, 2005, 2008, 2012];
+function Sumar(num1, num2, callBack){
+    let resultado = num1+num2;
+    callBack(resultado);
+}
 
-var edad5 = years.map(function(el){
-    return 2019 - el;
-})
-console.log(edad5);
+function Resultado(res){
+    console.log(res);
+}
 
-//funcion en ES6 (TIPO FLECHA)
-let edad6 = years.map(el=>{
-    return 2019-el;
-})
-console.log(edad6);
+Sumar(5,8, Resultado);
+
+//set time out
+
+setTimeout(() =>console.log("Esto se va a ejecutar despues de 3 segundos"), 3000);
